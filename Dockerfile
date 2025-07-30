@@ -25,4 +25,10 @@ RUN chmod 1777 /app/downloads
 
 WORKDIR /app
 
-CMD spotdl web --host 0.0.0.0 --keep-alive --web-use-output-dir --output /app/downloads
+CMD spotdl web \
+  --host 0.0.0.0 \
+  --keep-alive \
+  --web-use-output-dir \
+  --output /app/downloads \
+  --client-id "${CLIENT_ID}" \
+  --client-secret "${CLIENT_SECRET}"
